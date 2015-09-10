@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << File.expand_path("./lib")
+
+puts "*" * 50
+puts "Loading data stream processor"
+puts "Requiring top_secret gem..."
+puts "*" * 50
+puts
+
+require 'top_secret'
+TopSecret.swizzle_the_datum

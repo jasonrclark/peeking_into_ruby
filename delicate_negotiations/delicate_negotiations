@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require "net/http"
+require "uri"
+
+url = "https://www.google.com/"
+uri = URI.parse(url)
+
+conn = Net::HTTP.new(uri.host, uri.port)
+conn.keep_alive_timeout = 60
+conn.use_ssl = true
+conn.start
+
+request = Net::HTTP::Get.new('/')
+response = conn.request(request)
+puts "#{response.code} from #{uri}"
+
+loop do
+  response = conn.request(request)
+  puts "#{response.code} from #{uri}"
+  sleep 10
+end

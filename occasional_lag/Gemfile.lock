@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.9.10)
+    msgpack (0.6.2)
+    rbtrace (0.4.7)
+      ffi (>= 1.0.6)
+      msgpack (>= 0.4.3)
+      trollop (>= 1.16.2)
+    trollop (2.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rbtrace
+
+BUNDLED WITH
+   1.10.5

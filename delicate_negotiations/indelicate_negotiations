@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "net/http"
+require "uri"
+
+uri = URI.parse("https://www.google.com/")
+loop do
+  response = Net::HTTP.get_response(uri)
+  puts "#{response.code} from #{uri}"
+  sleep 10
+end

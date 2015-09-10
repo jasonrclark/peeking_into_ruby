@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'thread'
+
+m1 = Mutex.new
+m2 = Mutex.new
+
+threads = []
+threads << Thread.new do
+  loop do
+  end
+end
+
+threads << Thread.new do
+  m1.lock
+  puts "Got 1, going for 2"
+  sleep 1
+  m2.lock
+end
+
+threads << Thread.new do
+  m2.lock
+  puts "Got 2, going for 1"
+  sleep 1
+  m1.lock
+end
+
+threads.each(&:join)

@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'rbtrace'
+
+class Custom
+  def goo
+  end
+end
+
+class BuiltIn
+  def goo
+  end
+end
+
+loop do
+  if rand(0..10) == 10
+    Custom.new.goo
+  else
+    BuiltIn.new.goo
+  end
+  sleep 0.5
+end

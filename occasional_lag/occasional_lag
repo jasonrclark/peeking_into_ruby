@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'rbtrace'
+puts "PID: #{$$}"
+
+stuff = []
+
+loop do
+  sleep 2
+  puts "#{Time.now.utc.strftime("%I:%M:%S.%6N")} Running background job"
+  stuff.concat(1_000_000.times.map { "Things" })
+  sleep 2
+  stuff.clear
+end

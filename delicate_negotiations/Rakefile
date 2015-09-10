@@ -1,0 +1,11 @@
+namespace :docker do
+  desc "Build The Case of the Delicate Negotiations"
+  task :build do
+    sh "docker build -t peeking_into_ruby/delicate_negotiations ."
+  end
+
+  desc "Run The Case of the Delicate Negotations"
+  task :run do
+    sh "docker run -it peeking_into_ruby/delicate_negotiations:latest bash"
+  end
+end

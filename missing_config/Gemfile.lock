@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    hometown (0.2.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hometown
+
+BUNDLED WITH
+   1.10.5
